@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="head-top">
+            <!-- menu button -->
+            <a href="#" class="menu-btn"><span></span></a>
+            <!-- logo -->
+            <div class="logo hover-masks-logo">
+                <a href="{% url 'web:index' %}">
+                    <span class="mask-lnk">Alejandro <strong>Abeyta</strong></span>
+                    <span class="mask-lnk mask-lnk-hover">Download <strong>CV</strong></span>
+                </a>
+            </div>
+
+            <!-- top menu -->
+            <div class="top-menu hover-masks">
+                <div class="top-menu-nav">
+                    <div class="menu-topmenu-container">
+                        <ul class="menu">
+
+                            <!-- <li class="menu-item  current-menu-item menu-item-has-children">
+                                <a href="index.html">Home</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item current-menu-item"><a href="index.html">Home Personal</a>
+                                    </li>
+                                    <li class="menu-item"><a href="index-default/index.html">Home Default</a></li>
+                                    <li class="menu-item"><a href="index-image/index.html">Home Image</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="menu-item  menu-item-has-children">
+                                <a href="resume/index.html">Resume</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item"><a href="resume/index.html">Resume Default</a></li>
+                                    <li class="menu-item"><a href="resume-image/index.html">Resume Image</a></li>
+                                </ul>
+                            </li> -->
+
+
+                            <li class="menu-item {% if is_index %}current-menu-item{% endif %}">
+                                <a href="{% url 'web:index' %}">Home</a>
+                            </li>
+
+
+                            <li class="menu-item {% if is_resume %}current-menu-item{% endif %}">
+                                <a href="{% url 'web:resume' %}">Resume</a>
+                            </li>
+
+
+                            <li class="menu-item {% if is_portfolio %}current-menu-item{% endif %}">
+                                <a href="{% url 'web:portfolio' %}">Portfolio</a>
+                            </li>
+
+                            <!-- <li class="menu-item ">
+                                <a href="blog/index.html">Blog</a>
+                            </li> -->
+
+                            <!-- <li class="menu-item  menu-item-has-children">
+                                <a href="contacts/index.html">Contacts</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item"><a href="contacts/index.html">Contacts Default</a></li>
+                                    <li class="menu-item"><a href="contacts-image/index.html">Contacts Image</a>
+                                    </li>
+                                </ul>
+                            </li> -->
+
+                            <li class="menu-item {% if is_contact %}current-menu-item{% endif %}">
+                                <a href="{% url 'web:contact' %}">Contacts</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+
+</html>

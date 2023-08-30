@@ -1390,7 +1390,6 @@ blockquote {
   opacity: 1;
 }
 .section.started .started-content .h-subtitle,
-.section.started .started-content .typed-subtitle,
 .section.started .started-content .typed-bread {
   margin-top: -45px;
   position: absolute;
@@ -1399,6 +1398,20 @@ blockquote {
   width: 100%;
   display: block;
   font-size: 90px;
+  line-height: 90px;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+}
+
+.section.started .started-content .typed-subtitle{
+  margin-top: -45px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: block;
+  font-size: 47PX;
   line-height: 90px;
   font-weight: 500;
   color: #fff;

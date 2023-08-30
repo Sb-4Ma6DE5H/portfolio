@@ -48,6 +48,9 @@
                                 <a href="{% url 'web:index' %}">Home</a>
                             </li>
 
+                               <li class="menu-item {% if is_about %}current-menu-item{% endif %}">
+                                <a href="{% url 'web:about' %}">About</a>
+                            </li>
 
                             <li class="menu-item {% if is_resume %}current-menu-item{% endif %}">
                                 <a href="{% url 'web:resume' %}">Resume</a>

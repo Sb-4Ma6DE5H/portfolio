@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-
+from .models import PortfolioItem  # Import your PortfolioItem model
 
 class IndexView(TemplateView):
     template_name = "web/index.html"
@@ -28,6 +28,8 @@ class PortfolioView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["is_portfolio"] = True
+        context["portfolio_items"] = PortfolioItem.objects.all()  # Fetch all portfolio items
+      
         return context
     
 class ContactView(TemplateView):

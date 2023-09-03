@@ -1,9 +1,6 @@
 from django.contrib import admin
+from .models import Portfolio
 
-# Register your models here.
-from django.contrib import admin
-from .models import PortfolioItem
-
-class PortfolioItemAdmin(admin.ModelAdmin):
+@admin.register(Portfolio)
+class PortfolioAdmin(admin.ModelAdmin):
     pass
-admin.site.register(PortfolioItem, PortfolioItemAdmin)

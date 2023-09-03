@@ -17,5 +17,8 @@ chmod -R 755 /var/task/media/portfolio
 chmod 777 -R media
 chmod 777 -R *
 chmod 777 -R /var/task/media/portfolio
+chmod -R +w media
+chmod -R +w /var/task/media/portfolio
+chmod -R +w /var/task/media
 echo "build files...💃"
 echo "Done!💃"

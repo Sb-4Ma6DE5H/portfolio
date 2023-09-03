@@ -23,3 +23,5 @@ chmod -R +w /var/task/media
 echo "build files...💃"
 echo "Done!💃"
 ls -a
+echo "pwd!💃"
+pwd

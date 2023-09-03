@@ -22,3 +22,4 @@ chmod -R +w /var/task/media/portfolio
 chmod -R +w /var/task/media
 echo "build files...💃"
 echo "Done!💃"
+ls -a

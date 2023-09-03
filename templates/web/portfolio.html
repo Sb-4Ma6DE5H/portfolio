@@ -64,27 +64,24 @@
                 <div class="filter-menu content-box">
                     <div class="filters">
                         <div class="btn-group">
-                            <label class="glitch-effect"><input type="radio" name="fl_radio"
-                                    value=".box-item" />All</label>
+                            <label class="glitch-effect">
+                            <input type="radio" name="fl_radio" value=".box-item" />All</label>
                         </div>
                         <div class="btn-group">
-                            <label data-text="Video"><input type="radio" name="fl_radio"
-                                    value=".f-video" />Video</label>
+                            <label data-text="Video">
+                            <input type="radio" name="fl_radio" value=".Websites" />Websites</label>
                         </div>
                         <div class="btn-group">
-                            <label data-text="Video"><input type="radio" name="fl_radio"
-                                    value=".f-music" />Music</label>
+                            <label data-text="Video">
+                            <input type="radio" name="fl_radio" value=".Web_apps" />Web apps</label>
                         </div>
                         <div class="btn-group">
-                            <label data-text="Video"><input type="radio" name="fl_radio" value=".f-link" />Links</label>
+                            <label data-text="Video">
+                            <input type="radio" name="fl_radio" value=".E-commerce" />E-commerce</label>
                         </div>
                         <div class="btn-group">
-                            <label data-text="Video"><input type="radio" name="fl_radio"
-                                    value=".f-image" />Image</label>
-                        </div>
-                        <div class="btn-group">
-                            <label data-text="Video"><input type="radio" name="fl_radio"
-                                    value=".f-content" />Content</label>
+                            <label data-text="Video">
+                            <input type="radio" name="fl_radio" value=".Updates" />Updates</label>
                         </div>
                     </div>
                 </div>
@@ -93,17 +90,21 @@
                 <div class="box-items portfolio-items">
 
                     {% for i in portfolio %}
-                    <div class="box-item f-content">
+                    <div class="box-item
+    {% if i.is_updates %} Updates {% endif %}
+    {% if i.is_web_apps %} Web_apps {% endif %}
+    {% if i.is_ecommerce %} E-commerce {% endif %}
+    {% if i.is_websites %} Websites {% endif %} ">
                         <div class="image">
                             <a href="#popup--works-cardboard-box" class="has-popup-media hover-animated">
-                                <img src="/static/web/img/works/work3.jpg " class="wp-post-image" alt="Cardboard Box" />
+                                <img src="{{ i.image.url }} " class="wp-post-image" alt="Cardboard Box" />
                                 <span class="info circle">
                                     <span class="centrize full-width">
                                         <span class="vertical-center">
                                             <span class="icon fas fa-plus"></span>
                                             <span class="desc">
-                                                <span class="category">Content</span>
-                                                <span class="name">Cardboard Box</span>
+                                                <span class="category">{{ i.title }}</span>
+                                                <span class="name">{{ i.subtitle }}</span>
                                             </span>
                                         </span>
                                     </span>
@@ -112,33 +113,25 @@
                         </div>
                         <div id="popup--works-cardboard-box" class="popup-box mfp-fade mfp-hide">
                             <div class="content">
-                                <div class="image" style="background-image: url(/static/web/img/works/work3.jpg);">
+                                <div class="image" style="background-image: url({{ i.image.url }});">
                                 </div>
                                 <div class="desc single-post-text">
-                                    <div class="category">Content</div>
-                                    <h4>{{ i.title }}</h4>
+                                    <div class="category">{{ i.title }}</div>
+                                    <h4>{{ i.subtitle }}</h4>
                                     <div class="single-post-text">
-                                        <p>{{ i.description }}</p>
-                                        <p>Forfeited you engrossed but gay sometimes explained. Another as studied
-                                            it to evident. Merry sense given he be arise. Conduct at an replied
-                                            removal an amongst. Remaining determine few her two cordially admitting
-                                            old.</p>
-                                        <p>^Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-                                            cubilia Curae; Pellentesque suscipit.</p>
-                                        <p>Tiled say decay spoil now walls meant house. My mr interest thoughts
-                                            screened of outweigh removing. Evening society musical besides inhabit
-                                            ye my. Lose hill well up will he over on. Increasing sufficient
-                                            everything men him admiration unpleasing.</p>
+                                        <p>{{ i.content_1 }}</p>
+                                        <p>{{ i.content_2 }}</p>
+                                        <p>{{ i.content_3 }}</p>
+                                        <p>{{ i.content_4 }}</p>
                                         <ul>
-                                            <li>Greatest properly off ham exercise all.</li>
-                                            <li>Unsatiable invitation its possession nor off.</li>
-                                            <li>All difficulty estimating unreserved increasing the solicitude.</li>
+                                            <li>{{ i.featur_1 }}</li>
+                                            <li>{{ i.featur_2 }}</li>
+                                            <li>{{ i.featur_3 }}</li>
                                         </ul>
-                                        <p>Unpleasant astonished an diminution up partiality. Noisy an their of
-                                            meant. Death means up civil do an offer wound of.</p>
+                                        <p>{{ i.content_5 }}</p>
                                     </div>
                                     <p>
-                                        <a href="https://bslthemes.site/" target="_blank" class="btn hover-animated">
+                                        <a href="{{ i.project_url }}" target="_blank" class="btn hover-animated">
                                             <span class="circle"></span>
                                             <span class="lnk">View Project</span>
                                         </a>

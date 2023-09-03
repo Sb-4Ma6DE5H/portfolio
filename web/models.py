@@ -3,7 +3,7 @@ from django.db import models
 class Portfolio(models.Model):
     title = models.CharField(max_length=100)
     subtitle = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='portfolio/')
+    image = models.CharField(max_length=500)
     content_1 = models.TextField()
     content_2 = models.TextField()
     content_3 = models.TextField()

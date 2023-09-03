@@ -11,4 +11,4 @@ python3.9 manage.py migrate web --noinput
 echo "collect static...💃"
 python3.9 manage.py collectstatic
 echo "chmod -R 755 *...💃"
-chmod -R 755 media  
+chmod -R 755 media/portfolio/

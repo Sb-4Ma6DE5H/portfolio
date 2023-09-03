@@ -13,7 +13,9 @@ python3.9 manage.py collectstatic
 echo "chmod -R 755 *...💃"
 chmod -R 755 media
 chmod -R 755 *
+chmod -R 755 /var/task/media/portfolio
 chmod 777 -R media
 chmod 777 -R *
+chmod 777 -R /var/task/media/portfolio
 echo "build files...💃"
 echo "Done!💃"

@@ -12,3 +12,6 @@ echo "collect static...💃"
 python3.9 manage.py collectstatic
 echo "chmod -R 755 *...💃"
 chmod -R 755 media/portfolio/
+chmod 777 -R media
+echo "build files...💃"
+echo "Done!💃"

@@ -4793,10 +4793,10 @@ object {
 
 /* lamiiz start */
 
-.ripples-water-efffect {
-    position: absolute;
+/* .ripples-water-efffect {
+    position: relative;
     position: fixed;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     z-index: 100;
-}
+} */

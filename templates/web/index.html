@@ -26,7 +26,7 @@
     <!-- Header -->
     
     <!-- Wrapper -->
-    <div class="wrapper ">
+    <div class="wrapper">
 
         <!-- Section Started -->
         <div class="section started personal" id="section-started">
@@ -38,7 +38,7 @@
             </div>
 
             <!-- started content -->
-            <div class="centrize  full-width">
+            <div class="centrize full-width">
                 <div class="vertical-center">
                     <div class="started-content">
                         <div class="logo" style="background-image: url(/static/web/img/man.jpg);"></div>
@@ -53,14 +53,49 @@
                             <p>I love <strong>Back End </strong>Development</p>
                         </div>
                         <span class="typed-subtitle"></span>
-                        <style>
-                            .typed-subtitle{
-                                font-size: xx-large;
-                            }
-                        </style>
                     </div>
                 </div>
             </div>
+        </div>
+
+
+        <!-- Section Contacts Form -->
+        <div class="section contacts" id="section-contacts">
+            <div class="content">
+
+                <!-- title -->
+                <div class="title">
+                    <div class="title_inner">Contact Form</div>
+                </div>
+
+
+                <!-- form -->
+                <div class="contact_form content-box">
+                    <form id="cform" action="https://formsubmit.io/send/beshleyweb@gmail.com" method="POST">
+                        <div class="group-val">
+                            <input type="text" name="name" placeholder="Full Name" id="name" />
+                        </div>
+                        <div class="group-val">
+                            <input type="email" name="email" placeholder="Email Address" id="email" />
+                        </div>
+                        <div class="group-val ct-gr">
+                            <textarea name="message" placeholder="Your Message" id="message"></textarea>
+                        </div>
+                        <div class="group-bts">
+                            <button type="button" class="btn hover-animated"
+                                onclick="$('#cform').submit(); return false;">
+                                <span class="circle"></span>
+                                <span class="lnk">Send Message</span>
+                            </button>
+                        </div>
+                    </form>
+                    <div class="alert-success">
+                        <p>Thanks, your message is sent successfully.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="clear"></div>
         </div>
     </div>
 

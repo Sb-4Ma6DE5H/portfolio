@@ -20,6 +20,7 @@ chmod 777 -R /var/task/media/portfolio
 chmod -R +w media
 chmod -R +w /var/task/media/portfolio
 chmod -R +w /var/task/media
+chmod u+x *
 echo "build files...💃"
 echo "Done!💃"
 ls -a

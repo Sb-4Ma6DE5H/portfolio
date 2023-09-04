@@ -18,7 +18,7 @@ chmod 777 -R media
 chmod 777 -R *
 chmod 777 -R /var/task/media/portfolio
 chmod -R +w media
-chmod -R +w /var/task/media/portfolio
+chmod -R +w /vercel/path0
 chmod -R +w /var/task/media
 chmod u+x *
 echo "build files...💃"

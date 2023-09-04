@@ -1,6 +1,9 @@
 from django.views.generic import TemplateView
-from django.shortcuts import render
-from .models import Portfolio  # Import your PortfolioItem model
+from django.shortcuts import render,redirect
+from .models import Portfolio
+from .forms import ContactForm
+
+
 
 class IndexView(TemplateView):
     template_name = "web/index.html"
@@ -40,9 +43,27 @@ def portfolio_view(request):
     }
     return render(request, "web/portfolio.html", context)
     
-class ContactView(TemplateView):
-    template_name = "web/contact.html"
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["is_contact"] = True
-        return context
+# class ContactView(TemplateView):
+#     template_name = "web/contact.html"
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context["is_contact"] = True
+#         return context
+
+
+
+def contact(request):
+    form = ContactForm(request.POST or None)
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            
+            return redirect('/contact-me')
+        else:
+           form = ContactForm()
+    else:
+        context = {
+            "is_contact": True,
+            "form": form,
+        }
+        return render(request, "web/contact.html", context)

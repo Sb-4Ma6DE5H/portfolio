@@ -24,3 +24,21 @@ class Portfolio(models.Model):
 
 class CheckUpImage(models.Model):
     image = models.ImageField(upload_to = 'images/')
+
+
+# class ContactMessage(models.Model):
+#     name = models.CharField(max_length=100)
+#     email = models.EmailField()
+#     message = models.TextField()
+#     timestamp = models.DateTimeField(auto_now_add=True)
+
+#     def __str__(self):
+#         return f"{self.name} - {self.email}"
+
+class Contact(models.Model):
+    name = models.CharField(max_length=120)
+    email = models.EmailField(null=True)
+    message = models.TextField()
+
+    def __str__(self):
+        return str(self.name)

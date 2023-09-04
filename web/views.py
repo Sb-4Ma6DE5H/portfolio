@@ -7,10 +7,26 @@ from .forms import ContactForm
 
 class IndexView(TemplateView):
     template_name = "web/index.html"
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["is_index"] = True
-        return context
+    
+    def get(self, request, *args, **kwargs):
+        form = ContactForm()
+        context = {
+            "is_index": True,
+            "form": form,
+        }
+        return render(request, self.template_name, context)
+
+    def post(self, request, *args, **kwargs):
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/contact-me')
+        
+        context = {
+            "is_index": True,
+            "form": form,
+        }
+        return render(request, self.template_name, context)
 
 class AboutView(TemplateView):
     template_name = "web/about.html"
@@ -26,14 +42,6 @@ class ResumeView(TemplateView):
         context["is_resume"] = True
         return context
     
-    
-# def portfolio_view(request):
-#     portfolio = Portfolio.objects.all()
-#     context = {
-#         "is_portfolio": True,
-#         "portfolio": portfolio,
-#     }
-#     return render(request, "web/portfolio.html", context)
     
 
 class PortfolioListView(ListView):

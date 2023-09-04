@@ -69,30 +69,31 @@
                 </div>
 
 
-                <!-- form -->
-                <div class="contact_form content-box">
-                    <form id="cform" action="https://formsubmit.io/send/beshleyweb@gmail.com" method="POST">
-                        <div class="group-val">
-                            <input type="text" name="name" placeholder="Full Name" id="name" />
+               <!-- form -->
+                    <div class="contact_form content-box">
+                        <form id="cform" action="" method="POST">
+                         {% csrf_token %}
+                            <div class="group-val">
+                                {{form.name}}
+                            </div>
+                            <div class="group-val">
+                                {{form.email}}
+                            </div>
+                            <div class="group-val ct-gr">
+                                {{form.message}}
+                            </div>
+                            
+                            <div class="group-bts">
+                                <button type="submit" class="btn hover-animated">
+                                    <span class="circle"></span>
+                                    <span class="lnk">Send Message</span>
+                                </button>
+                            </div>
+                        </form>
+                        <div class="alert-success">
+                            <p>Thanks, your message is sent successfully.</p>
                         </div>
-                        <div class="group-val">
-                            <input type="email" name="email" placeholder="Email Address" id="email" />
-                        </div>
-                        <div class="group-val ct-gr">
-                            <textarea name="message" placeholder="Your Message" id="message"></textarea>
-                        </div>
-                        <div class="group-bts">
-                            <button type="button" class="btn hover-animated"
-                                onclick="$('#cform').submit(); return false;">
-                                <span class="circle"></span>
-                                <span class="lnk">Send Message</span>
-                            </button>
-                        </div>
-                    </form>
-                    <div class="alert-success">
-                        <p>Thanks, your message is sent successfully.</p>
                     </div>
-                </div>
 
             </div>
             <div class="clear"></div>

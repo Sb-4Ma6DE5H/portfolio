@@ -96,7 +96,7 @@
     {% if i.is_ecommerce %} E-commerce {% endif %}
     {% if i.is_websites %} Websites {% endif %} ">
                         <div class="image">
-                            <a href="#popup--works-cardboard-box" class="has-popup-media hover-animated">
+                            <a href="#{{ i.title }}" class="has-popup-media hover-animated">
                                 <img src="{{ i.image }} " class="wp-post-image" alt="Cardboard Box" />
                                 <span class="info circle">
                                     <span class="centrize full-width">
@@ -111,7 +111,7 @@
                                 </span>
                             </a>
                         </div>
-                        <div id="popup--works-cardboard-box" class="popup-box mfp-fade mfp-hide">
+                        <div id="{{ i.title }}" class="popup-box mfp-fade mfp-hide">
                             <div class="content">
                                 <div class="image" style="background-image: url({{ i.image }});">
                                 </div>

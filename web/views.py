@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView,ListView
 from django.shortcuts import render,redirect
 from .models import Portfolio
 from .forms import ContactForm
@@ -26,44 +26,48 @@ class ResumeView(TemplateView):
         context["is_resume"] = True
         return context
     
-
-# class PortfolioView(TemplateView):
-#     template_name = "web/portfolio.html"
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context["is_portfolio"] = True
-#         context["portfolio_items"] = Portfolio.objects.all()  # Fetch all portfolio items
-#         return context
     
-def portfolio_view(request):
-    portfolio = Portfolio.objects.all()
-    context = {
-        "is_portfolio": True,
-        "portfolio": portfolio,
-    }
-    return render(request, "web/portfolio.html", context)
+# def portfolio_view(request):
+#     portfolio = Portfolio.objects.all()
+#     context = {
+#         "is_portfolio": True,
+#         "portfolio": portfolio,
+#     }
+#     return render(request, "web/portfolio.html", context)
     
-# class ContactView(TemplateView):
-#     template_name = "web/contact.html"
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context["is_contact"] = True
-#         return context
+
+class PortfolioListView(ListView):
+    model = Portfolio
+    template_name = 'web/portfolio.html'
+    context_object_name = 'portfolio'
+    queryset = Portfolio.objects.all()  # Optionally, you can define a custom queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["is_portfolio"] = True
+        return context
 
 
 
-def contact(request):
-    form = ContactForm(request.POST or None)
-    if request.method == "POST":
-        if form.is_valid():
-            form.save()
-            
-            return redirect('/contact-me')
-        else:
-           form = ContactForm()
-    else:
+class ContactView(TemplateView):
+    template_name = 'web/contact.html'  # Specify the template name
+
+    def get(self, request, *args, **kwargs):
+        form = ContactForm()
         context = {
             "is_contact": True,
             "form": form,
         }
-        return render(request, "web/contact.html", context)
+        return render(request, self.template_name, context)
+
+    def post(self, request, *args, **kwargs):
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/contact-me')
+        
+        context = {
+            "is_contact": True,
+            "form": form,
+        }
+        return render(request, self.template_name, context)

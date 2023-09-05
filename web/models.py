@@ -34,3 +34,9 @@ class Contact(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+class Knowledge(models.Model):
+    knowledge = models.CharField(max_length=120)
+
+    def __str__(self):
+        return str(self.knowledge)

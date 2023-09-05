@@ -365,9 +365,13 @@
                 <!-- skills items -->
                 <div class="skills list content-box">
                     <ul>
+                        {% for knowledg in knowledge %}
                         <li>
-                            <div class="name">web development</div>
+                            <div class="name">{{ knowledg.knowledge }}</div>
                         </li>
+                        {% endfor %}
+                        
+                        {% comment %}
                         <li>
                             <div class="name">Create logo design</div>
                         </li>
@@ -395,6 +399,7 @@
                         <li>
                             <div class="name">Debugging</div>
                         </li>
+                        {% endcomment %}
                     </ul>
                 </div>
             </div>

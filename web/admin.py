@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Portfolio,CheckUpImage
-from .models import Contact
+from .models import Contact,Knowledge
 
 @admin.register(Portfolio)
 class PortfolioAdmin(admin.ModelAdmin):
@@ -19,3 +19,9 @@ class ContactAdmin(admin.ModelAdmin):
     pass
 
 admin.site.register(Contact, ContactAdmin)
+
+
+
+@admin.register(Knowledge)
+class KnowledgeAdmin(admin.ModelAdmin):
+    pass

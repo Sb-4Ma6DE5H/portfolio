@@ -29,7 +29,10 @@ class IndexView(TemplateView):
         return render(request, self.template_name, context)
 
 class AboutView(TemplateView):
+    model = Knowledge
     template_name = "web/about.html"
+    knowledge = 'knowledge'
+    knwlge = Knowledge.objects.all()
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["is_about"] = True

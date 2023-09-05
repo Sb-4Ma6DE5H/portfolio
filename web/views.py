@@ -31,11 +31,11 @@ class IndexView(TemplateView):
 class AboutView(TemplateView):
     model = Knowledge
     template_name = "web/about.html"
-    knowledge = 'knowledge'
-    knwlge = Knowledge.objects.all()
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["is_about"] = True
+        context["knowledge"] = Knowledge.objects.all()
         return context
 
 class ResumeView(TemplateView):

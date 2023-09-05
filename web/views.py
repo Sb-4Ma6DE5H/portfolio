@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView,ListView
 from django.shortcuts import render,redirect
-from .models import Portfolio
+from .models import Portfolio,Knowledge
 from .forms import ContactForm
 
 

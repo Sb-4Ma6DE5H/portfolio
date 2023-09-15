@@ -7,13 +7,13 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path("owner/", admin.site.urls),
     path("", include("web.urls", namespace="web")),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
-admin.site.site_header = "PROJECT Administration"
-admin.site.site_title = "PROJECT Admin Portal"
-admin.site.index_title = "Welcome to PROJECT Admin Portal"
+admin.site.site_header = "PORTFOLIO Administration"
+admin.site.site_title = "PORTFOLIO Admin Portal"
+admin.site.index_title = "Welcome to PORTFOLIO Admin Portal"
